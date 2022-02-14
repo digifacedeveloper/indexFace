@@ -8,10 +8,6 @@
 </head>
 <body>
 <?php
-/////////////////////////////////////////////////////////**
-//顔登録API https://api.digiface.jp/put
-//Created by GEN FUKUHARA 2022-02-01
-/////////////////////////////////////////////////////////**
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES['userfile']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['userfile']['tmp_name']) && (!empty($_POST['UID'])) ) {
 
     $file_name=$_FILES['userfile']['tmp_name'];
@@ -25,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES
     $data_json_demo = json_encode($data_demo,JSON_NUMERIC_CHECK);
 
     $ch_demo = curl_init();
-    curl_setopt($ch_demo, CURLOPT_HTTPHEADER, array('X-Api-Key: pG0JKecKs3J6UTPY23rd626XNiVQZP02pCdCfus0'));
+    curl_setopt($ch_demo, CURLOPT_HTTPHEADER, array('X-Api-Key: <YOUR API KEY>'));
     curl_setopt($ch_demo, CURLOPT_CUSTOMREQUEST, 'POST');
     curl_setopt($ch_demo, CURLOPT_POSTFIELDS, $data_json_demo);
     curl_setopt($ch_demo, CURLOPT_RETURNTRANSFER, true);
